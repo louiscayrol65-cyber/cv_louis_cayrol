@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Louis CAYROL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --blue: #4361ee; --bg: #eff3f9; --green-bg: #dcfce7; --green-text: #15803d; --gold-bg: #fffbf0; --text: #1e293b; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg); font-family: 'Montserrat', sans-serif; color: var(--text); padding: 0; margin: 0; }
+        .app-container { width: 100%; max-width: 600px; margin: 0 auto; background: var(--bg); padding: 20px 20px 40px 20px; min-height: 100vh; display: flex; flex-direction: column; gap: 20px; }
+        header { text-align: center; display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; }
+        .status-badge { background-color: var(--green-bg); color: var(--green-text); border: 1px solid #86efac; padding: 12px 24px; border-radius: 50px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.15); }
+        .dot { width: 10px; height: 10px; background: var(--green-text); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+        .name-badge { background-color: var(--green-bg); color: var(--green-text); border: 2px solid #86efac; padding: 15px 30px; border-radius: 50px; font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: flex; align-items: center; gap: 12px; box-shadow: 0 6px 20px rgba(22, 163, 74, 0.2); }
+        .name-badge i { font-size: 20px; }
+        h1 { color: var(--blue); font-size: 28px; line-height: 1.1; text-transform: uppercase; font-weight: 900; margin-bottom: 10px; }
+        .tagline { font-size: 13px; color: #64748b; font-weight: 500; margin-bottom: 20px; font-style: italic; }
+        .section-btn { background-color: var(--blue); color: white; padding: 12px 25px; border-radius: 12px; font-weight: 800; text-transform: uppercase; font-size: 14px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3); margin-bottom: 15px; }
+        .card { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 25px; }
+        .card-gold { background: var(--gold-bg); border: 2px solid #eab308; border-radius: 20px; padding: 20px; margin-bottom: 25px; }
+        .gold-title { color: #ca8a04; font-weight: 800; text-transform: uppercase; font-size: 13px; margin-bottom: 10px; display: flex; gap:8px; align-items: center;}
+        .gold-text { font-size: 14px; line-height: 1.6; color: #854d0e; }
+        .gold-strong { font-weight: 800; color: #a16207; }
+        .skill-list { display: flex; flex-direction: column; gap: 10px; }
+        .skill-bar { background: white; padding: 15px; border-radius: 15px; display: flex; align-items: center; gap: 15px; font-weight: 600; font-size: 14px; color: var(--text); box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .skill-bar i { color: var(--blue); font-size: 18px; }
+        .tags-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag { background: white; padding: 10px 18px; border-radius: 30px; font-size: 13px; font-weight: 600; display: flex; gap: 8px; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .tag i { color: var(--blue); }
+        .exp-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f1f5f9; }
+        .exp-item:last-child { border: none; margin: 0; padding: 0; }
+        .exp-company { color: var(--blue); font-weight: 800; text-transform: uppercase; font-size: 13px; display: block; margin-bottom: 5px; }
+        .exp-badge { background: #eff6ff; color: var(--blue); font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; display: inline-block; margin-bottom: 8px;}
+        .exp-job { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 10px; display: block; }
+        .exp-list { list-style: none; }
+        .exp-list li { margin-bottom: 8px; font-size: 14px; color: #475569; display: flex; gap: 10px; line-height: 1.5; }
+        .exp-list li::before { content: "•"; color: var(--blue); font-weight: 900; font-size: 18px; line-height: 1; }
+        .edu-item { background: #f8fafc; border-radius: 12px; padding: 15px; margin-bottom: 10px; border-left: 4px solid var(--blue); }
+        .edu-year { color: var(--blue); font-weight: 800; font-size: 13px; display: block; margin-bottom: 4px; }
+        .edu-title { font-weight: 700; font-size: 14px; color: var(--text); display: block; margin-bottom: 2px;}
+        .edu-school { font-size: 13px; color: #64748b; font-style: italic; }
+        .footer-blue { background-color: var(--blue); border-radius: 20px; padding: 30px 20px; text-align: center; color: white; margin-top: 20px; box-shadow: 0 10px 30px rgba(67, 97, 238, 0.4); }
+        .footer-text { font-family: 'Times New Roman', serif; font-style: italic; font-size: 16px; margin-bottom: 25px; line-height: 1.6; opacity: 0.95; }
+        .contact-btn { display: block; background: white; color: var(--blue); text-decoration: none; padding: 15px; border-radius: 50px; font-weight: 700; font-size: 14px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="status-badge"><div class="dot"></div> Disponible Immédiatement</div>
+            <h1>Plongeur<br>Gastronomique</h1>
+            <div class="tagline">Hygiène irréprochable – Cadence soutenue – Fiabilité</div>
+            <div class="name-badge"><i class="fa-solid fa-user"></i> Louis CAYROL</div>
+        </header>
+        <div class="card-gold">
+            <div class="gold-title"><i class="fa-solid fa-star"></i> Reconversion Professionnelle</div>
+            <p class="gold-text">"Ma priorité : la fluidité de votre service en plonge.<br>Mon atout : la réactivité de votre communication visuelle.<br><br>Étudiant <span class="gold-strong">Graduate Graphiste</span> disponible pour la saison 2026, je mets ma rigueur et ma créativité au service de votre performance globale."</p>
+        </div>
+        <div class="section-btn"><i class="fa-solid fa-briefcase"></i> Parcours Professionnel</div>
+        <div class="card">
+            <div class="exp-item">
+                <span class="exp-company">ANDROS – Site Agroalimentaire</span>
+                <span class="exp-badge">2018 – 2024 · 6 ans</span>
+                <span class="exp-job">Cariste / Manutentionnaire Haute Cadence</span>
+                <ul class="exp-list">
+                    <li>Respect permanent des normes d'hygiène et sécurité alimentaire strictes</li>
+                    <li>Gestion rigoureuse des flux et traçabilité en environnement exigeant</li>
+                    <li>Stabilité exceptionnelle : 6 ans sans interruption</li>
+                    <li>Entretien régulier des zones et équipements</li>
+                </ul>
+            </div>
+            <div class="exp-item">
+                <span class="exp-company">Établissements de Restauration</span>
+                <span class="exp-badge">2016 – 2018</span>
+                <span class="exp-job">Plongeur – Commis de Cuisine</span>
+                <ul class="exp-list">
+                    <li>Entretien vaisselle, cristallerie et matériel haut de gamme</li>
+                    <li>Anticipation et fluidification du service en brigade</li>
+                    <li>Respect strict des protocoles d'hygiène en cuisine professionnelle</li>
+                    <li>Maintien impeccable des postes pendant le service</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section-btn"><i class="fa-solid fa-graduation-cap"></i> Formation</div>
+        <div class="card">
+            <div class="edu-item"><span class="edu-year">2025 – 2026</span><span class="edu-title">Graduate Graphiste</span><span class="edu-school">Studi — En cours</span></div>
+            <div class="edu-item"><span class="edu-year">2016 – 2018</span><span class="edu-title">Mention Complémentaire – Niveau BEP Restaurant</span><span class="edu-school">CFA Cahors</span></div>
+            <div class="edu-item"><span class="edu-year">2014 – 2016</span><span class="edu-title">Bac Pro Commercialisation & Services</span><span class="edu-school">Lycée Hôtelier</span></div>
+            <div class="edu-item"><span class="edu-year">2014</span><span class="edu-title">CAP Commercialisation & Services</span><span class="edu-school">Obtenu</span></div>
+        </div>
+        <div class="section-btn"><i class="fa-solid fa-wrench"></i> Compétences</div>
+        <div class="skill-list">
+            <div class="skill-bar"><i class="fa-solid fa-shield-virus"></i> Normes HACCP</div>
+            <div class="skill-bar"><i class="fa-solid fa-hands-bubbles"></i> Plonge manuelle & tunnel</div>
+            <div class="skill-bar"><i class="fa-solid fa-wine-glass"></i> Cristallerie & vaisselle fine</div>
+            <div class="skill-bar"><i class="fa-solid fa-recycle"></i> Tri & gestion déchets alimentaires</div>
+            <div class="skill-bar"><i class="fa-solid fa-flask"></i> Produits d'hygiène & dosages</div>
+            <div class="skill-bar"><i class="fa-solid fa-boxes-stacked"></i> Organisation & rangement poste</div>
+            <div class="skill-bar"><i class="fa-solid fa-person-running"></i> Travail en haute cadence</div>
+        </div>
+        <br>
+        <div class="section-btn"><i class="fa-solid fa-heart"></i> Centres d'intérêt</div>
+        <div class="tags-wrap" style="margin-bottom: 20px;">
+            <div class="tag"><i class="fa-solid fa-camera"></i> Photographie argentique</div>
+            <div class="tag"><i class="fa-solid fa-font"></i> Typographie</div>
+            <div class="tag"><i class="fa-solid fa-film"></i> Cinéma d'auteur</div>
+            <div class="tag"><i class="fa-solid fa-music"></i> Génériques de films</div>
+        </div>
+        <div class="footer-blue">
+            <div class="footer-text">« Rigoureux, endurant et formé aux exigences de l'hygiène alimentaire, je suis prêt à rejoindre une brigade gastronomique et à contribuer à des standards d'excellence irréprochables au quotidien. »</div>
+            <a href="mailto:louiscayrol65@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i> louiscayrol65@gmail.com</a>
+            <a href="tel:0634126130" class="contact-btn"><i class="fa-solid fa-phone"></i> 06 34 12 61 30</a>
+            <div class="contact-btn"><i class="fa-solid fa-car"></i> Permis B + véhicule</div>
+        </div>
+    </div>
+</body>
+</html>
